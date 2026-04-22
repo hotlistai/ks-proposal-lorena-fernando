@@ -262,14 +262,14 @@ function MiddleVideoSection() {
   );
 }
 
-function BuildSection() {
+function CocktailHourSection() {
   return (
     <section
       className="mx-auto max-w-[1040px] px-9 py-[72px] md:px-[72px]"
       style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
     >
       <FadeIn>
-        <SectionLabel>The Build</SectionLabel>
+        <SectionLabel>The Transition</SectionLabel>
         <h2
           className="font-bold"
           style={{
@@ -279,38 +279,89 @@ function BuildSection() {
             color: "#ffffff",
           }}
         >
-          Ceremony, Cocktail Hour & Reception Experience
+          Cocktail Hour Atmosphere
         </h2>
       </FadeIn>
 
       <FadeIn delay={100}>
-        <p className="mt-4 text-[11px] font-semibold uppercase" style={{ letterSpacing: "0.28em", color: "rgba(255,255,255,0.45)" }}>
+        <p
+          className="mt-4 text-[11px] font-semibold uppercase"
+          style={{ letterSpacing: "0.28em", color: "rgba(255,255,255,0.45)" }}
+        >
           {config.venue}
         </p>
       </FadeIn>
 
       <FadeIn delay={175}>
-        <div className="mt-10">
-          <SectionLabel>Cocktail Hour</SectionLabel>
-          <ul className="my-0 max-w-[64ch] list-none p-0">
-            {cocktailItems.map((item) => (
-              <StyledListItem key={item}>{item}</StyledListItem>
-            ))}
-          </ul>
-        </div>
+        <p className="mt-8 max-w-[64ch] font-light" style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.75 }}>
+          As guests move from the ceremony into the evening, the atmosphere shifts into a welcoming live performance
+          that feels elevated, social, and naturally connected to the rest of the celebration.
+        </p>
       </FadeIn>
 
       <FadeIn delay={250}>
-        <div className="mt-12">
-          <SectionLabel>Reception</SectionLabel>
-          <p className="max-w-[64ch] font-light" style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.75 }}>
-            As the evening unfolds, the experience transitions naturally into a DJ-led reception with live saxophone
-            integration.
-          </p>
+        <ul className="mt-8 max-w-[64ch] list-none p-0">
+          {cocktailItems.map((item) => (
+            <StyledListItem key={item}>{item}</StyledListItem>
+          ))}
+        </ul>
+      </FadeIn>
+    </section>
+  );
+}
+
+function ProductionImageSection() {
+  return (
+    <section
+      className="mx-auto max-w-[1040px] px-9 py-[72px] md:px-[72px]"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
+      <FadeIn>
+        <div className="mx-auto max-w-[820px]">
+          <Image
+            src={PRODUCTION_IMAGE}
+            alt="Knox Signature production setup with minimal white DJ command center and architectural lighting"
+            width={1040}
+            height={600}
+            className="block h-auto w-full"
+            style={{ border: "1px solid rgba(255,255,255,0.06)", opacity: 0.96 }}
+            unoptimized
+          />
         </div>
       </FadeIn>
+    </section>
+  );
+}
 
-      <FadeIn delay={325}>
+function ReceptionSection() {
+  return (
+    <section
+      className="mx-auto max-w-[1040px] px-9 py-[72px] md:px-[72px]"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
+      <FadeIn>
+        <SectionLabel>The Celebration</SectionLabel>
+        <h2
+          className="font-bold"
+          style={{
+            fontSize: "clamp(28px, 3.5vw, 42px)",
+            letterSpacing: "-0.03em",
+            lineHeight: 1.05,
+            color: "#ffffff",
+          }}
+        >
+          Reception Experience
+        </h2>
+      </FadeIn>
+
+      <FadeIn delay={100}>
+        <p className="mt-6 max-w-[64ch] font-light" style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.75 }}>
+          As the evening unfolds, the experience transitions naturally into a DJ-led reception with live saxophone
+          integration.
+        </p>
+      </FadeIn>
+
+      <FadeIn delay={175}>
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div
             className="h-full px-7 py-7"
@@ -337,7 +388,7 @@ function BuildSection() {
         </div>
       </FadeIn>
 
-      <FadeIn delay={400}>
+      <FadeIn delay={250}>
         <div className="mt-12">
           <SectionLabel>Production & Design</SectionLabel>
           <ul className="my-0 max-w-[64ch] list-none p-0">
@@ -348,26 +399,12 @@ function BuildSection() {
         </div>
       </FadeIn>
 
-      <FadeIn delay={475}>
+      <FadeIn delay={325}>
         <p className="mt-10 max-w-[64ch] font-light" style={{ color: "rgba(255,255,255,0.58)", lineHeight: 1.75 }}>
           We are also more than happy to join for a site visit prior to the wedding day and will schedule a music
           planning session as the date gets closer to ensure everything feels smooth and fully aligned with the flow of
           the evening.
         </p>
-      </FadeIn>
-
-      <FadeIn delay={550}>
-        <div className="mt-14">
-          <Image
-            src={PRODUCTION_IMAGE}
-            alt="Knox Signature production setup with minimal white DJ command center and architectural lighting"
-            width={1040}
-            height={600}
-            className="block h-auto w-full"
-            style={{ border: "1px solid rgba(255,255,255,0.06)", opacity: 0.96 }}
-            unoptimized
-          />
-        </div>
       </FadeIn>
     </section>
   );
@@ -536,7 +573,9 @@ export function LorenaFernandoProposalPage() {
       <EventSnapshot />
       <ArrivalSection />
       <MiddleVideoSection />
-      <BuildSection />
+      <CocktailHourSection />
+      <ProductionImageSection />
+      <ReceptionSection />
       <TimingSection />
       <TotalInvestmentSection />
       <ProposalFooter />
